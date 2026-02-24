@@ -1,13 +1,13 @@
 'use client';
 import { useState } from "react";
 import { Search } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { candidates } from "@/data/candidates";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SearchHero = () => {
   const [query, setQuery] = useState("");
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const results = query.length > 1
     ? candidates.filter(
@@ -63,7 +63,7 @@ const SearchHero = () => {
                   <button
                     key={c.id}
                     onClick={() => {
-                      navigate(`/candidato/${c.id}`);
+                      router.push(`/candidato/${c.id}`);
                       setQuery("");
                     }}
                     className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm transition-colors hover:bg-secondary"

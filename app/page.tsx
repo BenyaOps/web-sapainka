@@ -1,13 +1,13 @@
-import Layout from "@/components/Layout";
+'use client';
 import SearchHero from "@/components/SearchHero";
 import CategoryCards from "@/components/CategoryCards";
 import PollsChart from "@/components/PollsChart";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Index = () => (
-  <Layout>
+  <>
     <SearchHero />
     <CategoryCards />
     <PollsChart />
@@ -19,7 +19,7 @@ const Index = () => (
       className="container-narrow pb-16"
     >
       <Link
-        to="/comparar"
+        href="/comparemos"
         className="data-card flex items-center justify-between group"
       >
         <div>
@@ -40,7 +40,7 @@ const Index = () => (
         </p>
       </div>
     </footer>
-  </Layout>
+  </>
 );
 
 export default Index;

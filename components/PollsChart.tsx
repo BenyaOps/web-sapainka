@@ -1,3 +1,4 @@
+'use client';
 import { candidates } from "@/data/candidates";
 import { motion } from "framer-motion";
 import Link from "next/link";

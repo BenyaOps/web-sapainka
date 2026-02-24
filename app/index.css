@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* Tailwind v4 */
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 39% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 39% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 39% 11%;
+
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 39% 11%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 239 84% 67%;
+
+    --radius: 0.5rem;
+
+    --chart-1: 239 84% 67%;
+    --chart-2: 160 84% 39%;
+    --chart-3: 215 16% 47%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 72% 51%;
+
+    --score-high: 160 84% 39%;
+    --score-medium: 38 92% 50%;
+    --score-low: 0 72% 51%;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 20% 98%;
+    --card: 224 71% 6%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71% 6%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 239 84% 67%;
+  }
+
+  * {
+    border:hsl(from var(--border));
+  }
+
+  body {
+    background: hsl(from var(--background));
+    color: hsl(from var(--foreground));
+    font-size: 1rem;
+  }
+  .antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    /*@apply tracking-tight font-semibold;*/
+    font-weight: 600;
+        color: hsl(from var(--foreground));
+
+  }
+}
+
+@layer components {
+  .container-narrow {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--container-5xl, 64rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (width >= 40rem) {
+    .container-narrow {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  .data-card {
+    /*@apply bg-card border border-border rounded-lg p-5 transition-shadow duration-200 hover:shadow-md;*/
+  
+    border:hsl(from var(--border));
+    background:hsl(from var(--card));
+    color:hsl(from var(--card-foreground));
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    transition: box-shadow 200ms;
+}
+.data-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .score-badge {
+    /*@apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold;*/
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+  .score-high {
+    /*@apply score-badge bg-accent/10 text-accent;*/
+    background-color: hsl(from var(--accent) / 0.1);
+    color: hsl(from var(--accent));
+  }
+
+  .score-medium {
+    /*@apply score-badge bg-[hsl(var(--score-medium))]/10 text-[hsl(var(--score-medium))];*/
+    background-color: hsl(from var(--score-medium) / 0.1);
+    color: hsl(from var(--score-medium));
+
+}
+
+  .score-low {
+    /*@apply score-badge bg-destructive/10 text-destructive;*/
+    background-color: hsl(from var(--destructive) / 0.1);
+    color: hsl(from var(--destructive));
+  }
+
+
+  .status-verified {
+    /*@apply inline-flex items-center gap-1 rounded-full bg-accent/10 text-accent px-2.5 py-0.5 text-xs font-medium;*/
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    padding: 0.125rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: hsl(from var(--accent) / 0.1);
+    color: hsl(from var(--accent));
+}
+
+  .status-pending {
+   /*@apply inline-flex items-center gap-1 rounded-full bg-[hsl(var(--score-medium))]/10 text-[hsl(var(--score-medium))] px-2.5 py-0.5 text-xs font-medium;*/
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    padding: 0.125rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background-color: hsl(from var(--score-medium) / 0.1);
+    color: hsl(from var(--score-medium));
+    }
+
+  
+}

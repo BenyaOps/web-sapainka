@@ -1,3 +1,4 @@
+'use client';
 import { Shield, TrendingUp, Heart, GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
 

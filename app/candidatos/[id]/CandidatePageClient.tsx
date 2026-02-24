@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Layout from "@/components/Layout";
+
 import { getScoreColor } from "@/data/candidates";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -26,7 +26,7 @@ export default function CandidatePageClient({ candidate }: { candidate: Candidat
     .slice(0, 2);
 
   return (
-    <Layout>
+    <>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -194,6 +194,6 @@ export default function CandidatePageClient({ candidate }: { candidate: Candidat
           </TabsContent>
         </Tabs>
       </motion.div>
-    </Layout>
+    </>
   );
 }
