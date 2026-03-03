@@ -1,3 +1,5 @@
+"use client";
+
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Zap, ChevronRight, BarChart3, Users, ShieldCheck } from "lucide-react";
