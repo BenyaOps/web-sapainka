@@ -1,10 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Zap, ChevronRight, BarChart3, Users, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
-  const navigate = useNavigate();
+    const router = useRouter();
 
   return (
     <div className="min-h-screen bg-background">
@@ -39,7 +39,7 @@ const Index = () => {
             >
               <Button
                 size="lg"
-                onClick={() => navigate("/quiz")}
+                onClick={() => router.push("/quiz")}
                 className="gradient-navy text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Zap className="mr-2 h-5 w-5" />

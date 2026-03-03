@@ -18,7 +18,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center gap-2">
           <Vote className="h-5 w-5 text-primary" />
           <span className="text-base font-bold tracking-tight">
-            Voto Transparente
+            El Chasqui
           </span>
           <span className="hidden sm:inline text-xs font-medium text-muted-foreground bg-secondary px-2 py-0.5 rounded-full">
             2026
